@@ -1,0 +1,16 @@
+.product-offers{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+  margin: 0 0 30px;
+  li{
+    margin: 0 0 10px;
+    &:last-child{
+      margin: 0 0 5px;
+    }
+  }
+}
+
+.left-text {
+  text-align: left !important;
+}

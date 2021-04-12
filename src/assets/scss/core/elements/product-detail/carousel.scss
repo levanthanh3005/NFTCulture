@@ -1,0 +1,119 @@
+
+
+.slides {
+  max-width:400px;
+  margin: 0 auto 30px;
+  // preserve aspect ratio
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: (1 / 1) * 100%;
+    }
+    > .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+  li {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    opacity: 0;
+    transform: scale(.98);
+    transition: all 1s;
+
+    &.is-active{
+      opacity: 1;
+      transform: scale(1);
+      transition: all 1s;
+    }
+  }
+}
+
+$thumbs-shown: 3;
+$thumbs-width: 64px;
+$thumbs-height: 64px;
+
+.slide-control {
+  text-align: center;
+  height: $thumbs-height;
+
+  .btn-direction{
+    width: $thumbs-width / 2;
+    height: $thumbs-height;
+    display: inline-block;
+    margin:0;
+    vertical-align: top;
+    background: none;
+    font-size: 2rem;
+    color: #999;
+    font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+    
+    &:disabled{
+      cursor: not-allowed;
+      color: #f0f0f0;
+    }
+  }
+
+  .controls-wrapper{
+    overflow: hidden;
+    display: inline-block;
+    width: $thumbs-shown * $thumbs-width + ($thumbs-shown * 3);
+    height: $thumbs-height + 2;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .controls{
+    height: $thumbs-height + 2;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    li {
+      list-style-type: none;
+      width: $thumbs-width;
+      height: $thumbs-height;
+      border: 1px solid transparent;
+      cursor: pointer;
+      a{
+        display: block;
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;          /* Likely future */
+      }
+      &, img{
+        display: inline-block;
+        border-radius: 3px;
+      }
+
+      &.is-prev,
+      &.is-active,
+      &.is-next{
+        display: inline-block;
+      }
+      &.is-prev{
+        // border:1px solid blue;
+      }
+      &.is-active{
+        border-color: #999999;
+      }
+      &.is-next{
+        // border:1px solid red;
+      }
+
+    }
+  }
+
+}
+
+.is-active {
+  display: block;
+}

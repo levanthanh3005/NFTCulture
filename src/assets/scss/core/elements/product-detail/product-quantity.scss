@@ -1,0 +1,35 @@
+.product-quantity{
+  margin: 0 0 30px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+
+  display: inline-block;
+  border-radius: 3px;
+  .label {
+    display: inline-block;
+    min-width: 125px;
+    font-size: .75rem;
+    text-transform: lowercase;
+  }
+  .controls{
+    display: inline-block;
+    strong{
+      width: 40px;
+      display: inline-block;
+      text-align: center;
+    }
+    button{
+      border:none;
+      height: 28px;
+      width: 28px;
+      line-height: 9px;
+      background: #ccc;
+      color: #fff;
+      border-radius: 50%;
+      &:disabled{
+        opacity: .5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

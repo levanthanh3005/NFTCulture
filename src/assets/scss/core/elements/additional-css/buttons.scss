@@ -1,0 +1,39 @@
+.btn{
+  border:none;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: .7rem;
+  text-transform: uppercase;
+  background: #f3f3f3;
+
+  &.btn-primary{
+    color: #fff;
+    box-shadow: inset 0px 0px 0px 1px #cc0000, 0px 1px 1px  rgba(0,0,0,.5);
+    background: #e26e6e;
+    background: linear-gradient(to bottom,  #e26e6e 0%,#cc0000 20%);
+    &:active{
+      background: #cc0000;
+    }
+  }
+
+  &.btn-secondary{
+    color: #fff;
+    box-shadow: inset 0px 0px 0px 1px #000000, 0px 1px 1px  rgba(0,0,0,.5);
+    background: #686868;
+    background: linear-gradient(to bottom, #686868 0%,#000000 20%);
+    &:active{
+      background: #000000;
+    }
+  }
+
+  // layouts
+  &.btn-lg{
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  &.btn-full{
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,3 @@
+FROM levanthanh3005/dockernode:v0.1
+
+RUN curl https://cli-assets.heroku.com/install-ubuntu.sh | sh

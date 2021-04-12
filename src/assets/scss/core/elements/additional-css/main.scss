@@ -1,0 +1,28 @@
+// Foundational
+@import "normalize";
+@import "typography";
+@import "lists";
+@import "buttons";
+
+// Grays
+// $cccccc: #cccccc;
+// $666666: #666666;
+// $999999: #999999;
+// $f3f3f3: #f3f3f3;
+// $333333: #333333;
+// $blue: #0066cc;
+$red: #cc0000;
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+// utility classes
+.text-center{
+  text-align: center;
+}

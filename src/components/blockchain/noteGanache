@@ -1,0 +1,140 @@
+https://medium.com/docker-hacks/docker-with-gui-b33ad6d03974
+
+#Test UI
+docker run -ti --rm \
+       -e DISPLAY=$DISPLAY \
+       -v /tmp/.X11-unix:/tmp/.X11-unix \
+       firefox
+
+https://medium.com/haloblock/deploy-your-own-smart-contract-with-truffle-and-ganache-cli-beginner-tutorial-c46bce0bd01e
+
+#For mac
+open -a XQuartz
+ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+xhost + $ip
+
+docker run -it --rm \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --network bridge \
+    --name ethganache \
+    -v $HOME/Desktop/Tools/NFTDemo/blockchainAPI:/opt/APP/truffle \
+    -e DISPLAY=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}'):0 \
+    -p 3000:3000 \
+    -p 8545:8545 \
+    levanthanh3005/ethganache:v0.35
+
+# For no UI
+
+docker run -it --rm \
+    --name ethganache \
+    -v $HOME/Desktop/Tools/NFTDemo/blockchainAPI:/opt/APP/truffle \
+    -p 3000:3000 \
+    -p 8545:8545 \
+    levanthanh3005/ethganache:v0.35
+
+#For ubuntu
+docker run -it --rm  \
+	--name ethganache \
+	-v $HOME/Desktop/ethereumdocker/ganache/Truffle:/opt/APP/truffle \
+    --network bridge \
+    -p 3000:3000 \
+    -p 8545:8545 \
+    ethganache
+
+docker run -it --rm  \
+    --name ethganache \
+    -v $HOME/Desktop/ethereumdocker/ganache/Truffle:/opt/APP/truffle \
+    -v /dev/snd:/dev/snd --privileged \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e uid=$(id -u) -e gid=$(id -g) \
+    -e DISPLAY=unix$DISPLAY \
+    --network bridge \
+    ethganache
+
+#start ganache
+ganache-cli -m "replace purpose priority swift air maid night august math coral tag antenna" -h 0.0.0.0
+
+ganache-cli -m "shed release sport light manage account pride carbon habit cereal behind stay" -h 0.0.0.0
+
+#start wallet in UI
+docker exec -it ethganache ./opt/APP/wallet/mist --rpc http://0.0.0.0:8545
+
+#do with truffle
+docker exec -it ethganache bash
+cd /opt/APP/truffle
+
+
+lift industry success hurdle piano fame rhythm solve erosion lawn wood stool
+
+cp -R /opt/APP/truffle/MyInsurance/build/contracts/MyInsurance.json  /opt/APP/truffle/MyInsurance/test/public/lib/MyInsurance.json
+
+var sender1 = "0xf4aa5a106188e003cbdced3456769ea03ca45cbd";
+private key = (0) 0x1c6816fb9663bb1e4622b643cb49ebd19fdc497e8eedbe92a25c1c6850a4ff6f
+
+Insurance code:
+It 0xacbf9eba9e03dc417e19c6a26cde0fd8515f5011 0x24d267305079977d9C3273d71886607b25B5cb78 0xf4aa5a106188e003cbdced3456769ea03ca45cbd
+
+Then you can get Ropsten ETH through below faucets:
+
+https://faucet.metamask.io/
+https://faucet.ropsten.be/
+https://faucet.dimensions.network/
+
+Available Accounts
+==================
+(0) 0xf4Aa5a106188E003CBDced3456769EA03cA45cBD (100 ETH)
+(1) 0x1AD62129D6F8850843FDa0D4A4712DEc2aa8492D (100 ETH)
+(2) 0xaCBf9ebA9e03Dc417E19C6A26Cde0fd8515f5011 (100 ETH)
+(3) 0x1e4F1f13187210344e6131C937bAf321FDb68143 (100 ETH)
+(4) 0x051F58702f59B2ae916048b046fF3D7D900804B5 (100 ETH)
+(5) 0xEF7275Ba61aD2d66c4990C46f5b0A8f4368B7B29 (100 ETH)
+(6) 0xc527D1c13f6CdEA25953EBE42F99CC6e421C5b0f (100 ETH)
+(7) 0x594894A2e750BF4dC3372c5b9A47A1a7AA9207CA (100 ETH)
+(8) 0x6e0B8cb2745e12dD7E59d084811a4003Edd8E2bc (100 ETH)
+(9) 0x1D4cB9796b073E773bc6B4C8910D4317DbdBc316 (100 ETH)
+
+Private Keys
+==================
+(0) 0x1c6816fb9663bb1e4622b643cb49ebd19fdc497e8eedbe92a25c1c6850a4ff6f
+(1) 0x0c1d2435ce5af77e6f4c8260084f46a23bdc745a886e38d5f63ee3afad6eed22
+(2) 0xb84e5832949298d21b187d8d1e2fae95958019250a10d0727a98e2e9828819ca
+(3) 0xd17a71c19b790ced8208c52e27df957d64895b3b5856ecdeba8406871a4cdd00
+(4) 0x06225c2d0f41a510d6e7646b3d1cd268445fdb92850215af19ac0c4b6bcec9c6
+(5) 0xf129d56ebf1ff9f85b4a477d52a0a449e100655df225f8945f2812e82daf2ebc
+(6) 0xbfa0ccd73ee4c6a226b8a6ed0dee1d326c671f72d26d055fd6047f26d988c9b9
+(7) 0x0e1ef29c61f7ced0c724b60d011da55720c4f90f97a82180b69875868a4cea6d
+(8) 0x88dc1564dfd1c2fa050578a431baa06178abdac0dbdefbc67fe9331ddd4f5088
+(9) 0x1d5bed19c0ca16380f89e17588c4644b3c14ddb261591c7e858a578b92a87aa7
+
+docker run -it --rm  \
+    --name noderepair_it \
+    --network bridge \
+    -v $HOME/Desktop/caromnetpp/python/NodeRepair:/todo \
+    -p 5002:5000 \
+    noderepair
+
+docker run -it --rm  \
+    --name noderepair_it \
+    --network bridge \
+    -p 5002:5000 \
+    noderepair
+
+localhost:5002/setHost?host=192.168.1.4:3000&country=It
+
+docker run -it --rm  \
+    --name noderepair_aus \
+    --network bridge \
+    -p 5003:5000 \
+    noderepair
+
+localhost:5003/setHost?host=192.168.1.4:3000&country=Aus
+
+#FOR oraclize
+https://medium.com/coinmonks/using-apis-in-your-ethereum-smart-contract-with-oraclize-95656434292e
+Need to install ethereum bridge, it will set up all neccessary contracts
+
+git clone https://github.com/oraclize/ethereum-bridge.git
+cd ethereum-bridge
+npm install
+
+node bridge -H 0.0.0.0:8545 -a 9 --dev
